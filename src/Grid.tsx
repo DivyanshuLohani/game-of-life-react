@@ -38,6 +38,7 @@ export default function Grid({
     } else if (isSimulating && !intervalID) {
       setIntervalID(() => setInterval(updateBoard, 100));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSimulating]);
 
   const seedBoard = () => {
@@ -102,7 +103,7 @@ export default function Grid({
         }}
       >
         {board.map((rows, i) =>
-          rows.map((col, j) => (
+          rows.map((_col, j) => (
             <div
               key={`${i}-${j}`}
               onClick={() => {
